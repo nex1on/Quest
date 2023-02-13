@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Игра-Квест</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      .bg-img {
+        background-image: url('Fon.png');
+        height: 929px;
+        background-size: 100% 100%;
+      }
+      .winner {
+        display: none;
+        height: 929px;
+      }
+      .point {
+        background: purple;
+        font-family: expresswayfree;
+        height: 330px;
+        width: 150px;
+        margin-left: 30px;
+      }
+      .score {
+        color: black;
+      }
+      .riki {
+        position: absolute;
+        left: 300px;
+        top: 100px;
+        width: 50px;
+      }
+      .io {
+        position: absolute;
+        left: 1100px;
+        top: 700px;
+        width: 50px;
+      }
+      .earthshaker {
+        position: absolute;
+        left: 1800px;
+        top: 500px;
+        width: 40px;
+      }
+      .sandking {
+        position: absolute;
+        left: 1300px;
+        top: 200px;
+        width: 50px;
+      }
+
+      @font-face{
+        src: url(expresswayfree.ttf);
+        font-family: expresswayfree;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-img">
+
+      <div class="point text-center">
+        <h2>Найди:</h2>
+        <h4 class="rikiText">1. Рики</h4>
+        <h4 class="ioText">2. Виспи</h4>
+        <h4 class="earthshakerText">3. Шейкер</h4>
+        <h4 class="sandkingText">4. Повелителя песка</h4>
+        <h1>Очки:</h1>
+        <h1 class="score"> 0</h1>
+      </div>
+
+      <img class="riki" src="riki.png">
+      <img class="io" src="io.png">
+      <img class="earthshaker" src="earthshaker.png">
+      <img class="sandking" src="sandking.png">
+
+      <script type="text/javascript">
+        let score = 0;
+        // Рики
+        document.querySelector('.riki').onclick = function() {
+          alert('Класс! Ты нашел не любимого героя.');
+          document.querySelector('.riki').style.display = 'none';
+          score = score + 1;
+          document.querySelector('.score').innerHTML = score;
+          document.querySelector('.rikiText').style.textDecoration = 'line-through';
+        }
+
+        // Виспи
+        document.querySelector('.io').onclick = function() {
+          alert('Класс! Ты нашел милашку.');
+          document.querySelector('.io').style.display = 'none';
+          score = score + 1;
+          document.querySelector('.score').innerHTML = score;
+          document.querySelector('.ioText').style.textDecoration = 'line-through';
+        }
+
+        // Шейкер
+        document.querySelector('.earthshaker').onclick = function() {
+          alert('Класс! Ты нашел себе тряску.');
+          document.querySelector('.earthshaker').style.display = 'none';
+          score = score + 1;
+          document.querySelector('.score').innerHTML = score;
+          document.querySelector('.earthshakerText').style.textDecoration = 'line-through';
+        }
+        
+        // Повелитель песка
+        document.querySelector('.sandking').onclick = function() {
+          alert('Класс! Ты нашел песчяника.');
+          document.querySelector('.sandking').style.display = 'none';
+          score = score + 1;
+          document.querySelector('.score').innerHTML = score;
+          document.querySelector('.sandkingText').style.textDecoration = 'line-through';
+        }
+
+      </script>
+    </div>
+  </body>
+</html>
